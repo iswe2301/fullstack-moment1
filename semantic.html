@@ -8,25 +8,109 @@
     <link rel="stylesheet" href="css/style.css">
     <!-- Inkluderar Semantic UI CSS och JS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.5.0/dist/semantic.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.5.0/dist/semantic.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <!-- Inkluderar TableSort JS -->
+    <script src="js/tablesort.js"></script>
+    <!-- Inkluderar egen JS -->
+    <script src="js/script.js"></script>
 </head>
 
 <body>
     <header>
-        <h1>CSS-ramverk</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Hem</a></li>
-                <li><a href="semantic.html">Semantic UI</a></li>
-                <li><a href="bulma.html">Bulma</a></li>
-            </ul>
+        <!-- Använder Semantic UI top fixed meny -->
+        <nav class="ui three item menu inverted top fixed menu">
+            <a class="item" href="index.html">Hem</a>
+            <a class="active item" href="semantic.html">Semantic UI</a>
+            <a class="item" href="bulma.html">Bulma</a>
         </nav>
+        <!-- Bakgrundsbild i header -->
+        <img src="img/background.png" alt="Vissna löv på ett träd" class="ui fluid image">
     </header>
-    <main>
-        <h2>Semantic UI</h2>
+    <!-- Innehåll, ui-container för att göra innehållet responsivt -->
+    <main class="ui container">
+        <div class="ui container">
+            <h1>CSS-ramverk</h1>
+            <!-- Använder Semantic UI header för rubriker -->
+            <h2 class="ui header">Semantic UI</h2>
+            <p>Semantic UI....</p>
+
+            <h3 class="ui header">Fördelar med Semantic UI</h3>
+            <p>Fördelar....</p>
+
+            <h3 class="ui header">Tabell</h3>
+            <!-- Använder Semantic UI tabell, sorterbar, blå linje, randigt innehåll -->
+            <table id="data-table" class="ui sortable blue striped celled table">
+                <thead>
+                    <tr>
+                        <!-- Använder TableSort för att sortera tabellen -->
+                        <th class="sorted ascending">Namn</th>
+                        <th class="">Intressen</th>
+                        <th class="">Favoritårstid</th>
+                        <th class="">Favoritmat</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Emma</td>
+                        <td>Mina favoritintressen är musik och sport.</td>
+                        <td>Sommar</td>
+                        <td>Italienskt</td>
+                    </tr>
+                    <tr>
+                        <td>Alice</td>
+                        <td>Jag gillar att resa och laga mat.</td>
+                        <td>Vår</td>
+                        <td>Grekiskt</td>
+                    </tr>
+                    <tr>
+                        <td>Erik</td>
+                        <td>Mina intressen är att se på film och gamea.</td>
+                        <td>Höst</td>
+                        <td>Svensk husman</td>
+                    </tr>
+                    <tr>
+                        <td>Alexander</td>
+                        <td>Jag tycker om att spela fotboll och umgås med vänner.</td>
+                        <td>Vinter</td>
+                        <td>Asiatiskt</td>
+                    </tr>
+                    <tr>
+                        <td>Julia</td>
+                        <td>Jag gillar att baka och att resa.</td>
+                        <td>Sommar</td>
+                        <td>Mexikanskt</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </main>
-    <footer>
-        <p>© 2024 Isa Westling</p>
+    <!-- Footer, ui inverted vertical footer segment för mörk bakgrund och vertikal layout -->
+    <footer class="ui inverted vertical footer segment">
+        <div class="ui container">
+            <!-- Använder Semantic UI stackable grid för att göra innehållet responsivt -->
+            <div class="ui stackable inverted grid centered">
+                <!-- Använder Semantic UI column för att dela upp innehållet -->
+                <div class="eight wide column">
+                    <h4 class="ui inverted header">Kontaktuppgifter</h4>
+                    <!-- Semantic UI ikoner för att visa kontaktuppgifter -->
+                    <p><i class="map marker alternate icon"></i> Vänersborgsvägen 9, 85733 Sundsvall</p>
+                    <p><i class="phone icon"></i> <a href="tel:+46733979381">+46733979381</p>
+                    <p><i class="envelope icon"></i> E-post: <a
+                            href="mailto:isawestling@gmail.com">isawestling@gmail.com</a></p>
+                </div>
+                <div class="eight wide column">
+                    <h4 class="ui inverted header">Sök</h4>
+                    <div class="ui large icon input">
+                        <input type="text" placeholder="Sök...">
+                        <i class="search icon"></i>
+                    </div>
+                </div>
+            </div>
+            <!-- Divider för att skapa avstånd -->
+            <div class="ui divider"></div>
+            <p>© 2024 Isa Westling</p>
+        </div>
     </footer>
 </body>
 
