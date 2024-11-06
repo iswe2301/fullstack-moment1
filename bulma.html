@@ -1,31 +1,240 @@
 <!DOCTYPE html>
-<html lang="sv">
+<html lang="sv" class="has-navbar-fixed-top">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CSS-ramverk | Bulma</title>
     <link rel="stylesheet" href="css/style.css">
+    <!-- Inkluderar Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Inkluderar Bulma CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+    <!-- Inkluderar jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <!-- Inkluderar TableSort JS -->
+    <script src="js/tablesort.js"></script>
+    <!-- Inkluderar egen JS -->
+    <script src="js/script.js"></script>
 </head>
 
 <body>
     <header>
-        <h1>CSS-ramverk</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Hem</a></li>
-                <li><a href="semantic.html">Semantic UI</a></li>
-                <li><a href="bulma.html">Bulma</a></li>
-            </ul>
+        <!-- Bulma navbar -->
+        <nav class="navbar is-fixed-top is-dark" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+                <a class="navbar-item is-hoverable" href="index.html">Hem</a>
+                <a class="navbar-item is-hoverable is-active" href="bulma.html">Bulma</a>
+                <a class="navbar-item is-hoverable" href="semantic.html">Semantic UI</a>
+                <a class="navbar-item" href="publish.html">Publicering</a>
+            </div>
         </nav>
+        <!-- Bulma hero för bakgrundsbild och titel -->
+        <section class="hero is-fullheight-with-navbar">
+            <div class="hero-body has-text-centered">
+                <div class="container">
+                    <div class="box has-background-black">
+                        <h1 class="title is-1 has-text-white">CSS-ramverk</h1>
+                    </div>
+                </div>
+            </div>
+        </section>
     </header>
-    <main>
-        <h2>Bulma</h2>
+
+    <!-- Section-klass för att skapa en sektion med innehåll -->
+    <main class="section">
+
+        <div class="container">
+            <!-- MB-5 klass för att ge en margin-bottom på 5 och separera olika sektioner -->
+            <div class="mb-5">
+                <h2 class="title is-2">Bulma</h2>
+                <p class="mb-4">Bulma är ett modernt och gratis CSS-ramverk byggt på öppen källkod som erbjuder färdiga
+                    frontend-komponenter som enkelt kan kombineras för att skapa responsiva webbgränssnitt. Bulma har en
+                    modulär design, vilket innebär att komponenterna kan anpassas och användas för specifika projekt
+                    utan att ladda ner onödig kod.</p>
+                <p class="mb-4">Ramverket fokuserar på att erbjuda användarna möjlighet till
+                    anpassning genom variabler och mixins, vilket gör det lätt för utvecklare att skräddarsy utseendet
+                    på sina webbplatser. Dessutom har Bulma en välstrukturerad och användarvänlig dokumentation, vilket
+                    underlättar för både nybörjare och erfarna utvecklare att snabbt komma igång.</p>
+                <p>
+                    <strong>Länk till webbplats: </strong>
+                    <a class="is-link is-hoverable" href="https://bulma.io/" target="_blank">Bulma</a>
+                </p>
+            </div>
+            <div class="mb-5">
+                <h3 class="subtitle is-3">Fördelar</h3>
+                <p>Efter att ha testat på både Semantic UI och Bulma, upplever jag att Bulma passar mig bättre
+                    personligen. Jag uppskattar särskilt hur användarvänlig dokumentationen är. Bulmas
+                    dokumentation har en praktisk sökfunktion och en tydligt strukturerad meny som gör det enkelt att
+                    navigera och hitta information. Jag har också upptäckt att båda ramverken använder enkla klassnamn
+                    som section, subtitle och container, vilket underlättar utvecklingen. Enligt min uppfattning har
+                    Bulma en mer omfattande dokumentation för olika element, såsom hur man gör en footer på bästa sätt
+                    och hur man hanterar spacing med marginaler och padding. Dessutom fanns bättre komponenter för att
+                    skapa en mobilvänlig meny</p>
+            </div>
+            <div class="mb-5">
+                <h3 class="subtitle is-3">Nackdelar</h3>
+                <p>En begränsning som jag har upptäckt med Bulma är avsaknaden av inbyggd JavaScript-funktionalitet,
+                    vilket
+                    innebär att utvecklare måste integrera JavaScript-lösningar själva för att hantera dynamiska
+                    element. Jag har också märkt att dokumentationen ibland saknar grafiska exempel, vilket gör att det
+                    kan vara svårt att visualisera hur elementen kommer att se ut på sidan enbart utifrån koden. En
+                    annan sak som jag upptäckte var att jag inte kunde få klassen "is-active" att fungera i min
+                    nav-meny, vilket gör att det är svårt att se vilken sida som man faktiskt befinner sig på.</p>
+            </div>
+
+            <div class="mb-6">
+                <h3 class="subtitle is-3">Tabell</h3>
+                <!-- Tabell med data som är sorterbar -->
+                <div class="table-container">
+                    <!-- Tabell med Bulma-klasser -->
+                    <table id="data-table" class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+                        <thead>
+                            <!-- Rad med rubriker i blå färg -->
+                            <tr class="is-info">
+                                <th class="has-text-centered">Namn <i class="fas fa-sort"></i></th>
+                                <th class="has-text-centered">Intressen <i class="fas fa-sort"></i></th>
+                                <th class="has-text-centered">Favoritårstid <i class="fas fa-sort"></i></th>
+                                <th class="has-text-centered">Favoritmat <i class="fas fa-sort"></i></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Emma</td>
+                                <td>Mina favoritintressen är musik och sport.</td>
+                                <td>Sommar</td>
+                                <td>Italienskt</td>
+                            </tr>
+                            <tr>
+                                <td>Alice</td>
+                                <td>Jag gillar att resa och laga mat.</td>
+                                <td>Vår</td>
+                                <td>Grekiskt</td>
+                            </tr>
+                            <tr>
+                                <td>Erik</td>
+                                <td>Mina intressen är att se på film och gamea.</td>
+                                <td>Höst</td>
+                                <td>Svensk husman</td>
+                            </tr>
+                            <tr>
+                                <td>Alexander</td>
+                                <td>Jag tycker om att spela fotboll och umgås med vänner.</td>
+                                <td>Vinter</td>
+                                <td>Asiatiskt</td>
+                            </tr>
+                            <tr>
+                                <td>Julia</td>
+                                <td>Jag gillar att baka och att resa.</td>
+                                <td>Sommar</td>
+                                <td>Mexikanskt</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Formulär för att lägga till data i tabellen, skapas i en box för att skapa en gräns runt innehållet -->
+            <div class="box">
+                <h3 class="subtitle is-3">Formulär</h3>
+                <!-- Formulär med Bulma-klasser -->
+                <form id="data-form" class="form">
+                    <div class="field mt-5">
+                        <label class="label">Namn</label>
+                        <div class="control">
+                            <input class="input" type="text" placeholder="Ange ditt namn..." required id="name">
+                        </div>
+                    </div>
+                    <div class="field mt-6">
+                        <label class="label">Intressen</label>
+                        <div class="control">
+                            <textarea class="textarea" placeholder="Ange dina intressen..." rows="2"
+                                id="interests"></textarea>
+                        </div>
+                    </div>
+                    <div class="field mt-6">
+                        <label class="label">Favoritårstid</label>
+                        <div class="control">
+                            <div class="select">
+                                <select required id="season">
+                                    <option value="">Välj en årstid...</option>
+                                    <option value="Vinter">Vinter</option>
+                                    <option value="Vår">Vår</option>
+                                    <option value="Sommar">Sommar</option>
+                                    <option value="Höst">Höst</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="field mt-6">
+                        <label class="label">Favoritmat</label>
+                        <!-- Klassen checkboxen för att gruppera innehållet -->
+                        <div class="control checkboxes">
+                            <label class="checkbox">
+                                <input type="checkbox" name="food" value="Italienskt" id="italian"> Italienskt
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" name="food" value="Grekiskt" id="greek"> Grekiskt
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" name="food" value="Svensk husman" id="swedish"> Svensk husman
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" name="food" value="Asiatiskt" id="asian"> Asiatiskt
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" name="food" value="Mexikanskt" id="mexican"> Mexikanskt
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" name="food" value="Indiskt" id="indish"> Indiskt
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" name="food" value="Arabiskt" id="arabic"> Arabiskt
+                            </label>
+                        </div>
+                    </div>
+                    <div class="control mb-4 mt-6">
+                        <!-- Bulma-knapp med primary färgen -->
+                        <button class="button is-primary" type="submit">Skicka</button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </main>
-    <footer>
-        <p>© 2024 Isa Westling</p>
+
+    <!-- Bulma footer med mörk bakgrund och vit text -->
+    <footer class="footer has-background-dark has-text-white">
+        <!-- Sektion och container för att centrera innehållet -->
+        <div class="section container">
+            <!-- Kolumner för att dela upp innehållet -->
+            <div class="columns">
+                <!-- Halvbredd på kolumn -->
+                <div class="column is-half">
+                    <h4 class="title is-4 has-text-white">Kontaktuppgifter</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Vänersborgsvägen 9, 85733 Sundsvall</p>
+                    <p><i class="fas fa-phone"></i> <a href="tel:+46733979381" class="has-text-white">+46733979381</a>
+                    </p>
+                    <p><i class="fas fa-envelope"></i> E-post: <a href="mailto:isawestling@gmail.com"
+                            class="has-text-white">isawestling@gmail.com</a></p>
+                </div>
+                <div class="column is-half">
+                    <h4 class="title is-4 has-text-white">Sök</h4>
+                    <div class="control has-icons-left">
+                        <input class="input" type="text" placeholder="Sök...">
+                        <span class="icon is-left">
+                            <i class="fas fa-search"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <!-- Horisontell linje med ljus bakgrund -->
+            <hr class="has-background-light">
+            <!-- Centrerad text i footer -->
+            <p class="has-text-centered">© 2024 Isa Westling</p>
+        </div>
     </footer>
 </body>
 
