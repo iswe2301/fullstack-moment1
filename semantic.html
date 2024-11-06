@@ -83,6 +83,77 @@
                     </tr>
                 </tbody>
             </table>
+            <h3 class="ui header">Formulär</h3>
+            <!-- Använder Semantic UI formulär -->
+            <form id="data-form" class="ui form">
+                <div class="field">
+                    <label>Namn</label>
+                    <input type="text" placeholder="Ange ditt namn..." required id="name">
+                </div>
+                <div class="field">
+                    <label>Intressen</label>
+                    <textarea placeholder="Age dina intressen..." rows="2" id="interests"></textarea>
+                </div>
+                <div class="field">
+                    <label>Favoritårstid</label>
+                    <!-- Använder Semantic UI dropdown för att välja årstid -->
+                    <select class="ui dropdown" required id="season">
+                        <option value="">Välj en årstid...</option>
+                        <option value="Vinter">Vinter</option>
+                        <option value="Vår">Vår</option>
+                        <option value="Sommar">Sommar</option>
+                        <option value="Höst">Höst</option>
+                    </select>
+                </div>
+                <!-- Semantic UI grupperade fält för att välja favoritmat -->
+                <div class="grouped fields">
+                    <label>Favoritmat</label>
+                    <div class="field">
+                        <div class="ui checkbox">
+                            <input type="checkbox" name="food" value="Italienskt" id="italian">
+                            <label>Italienskt</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui checkbox">
+                            <input type="checkbox" name="food" value="Grekiskt" id="greek">
+                            <label>Grekiskt</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui checkbox">
+                            <input type="checkbox" name="food" value="Svensk husman" id="swedish">
+                            <label>Svensk husman</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui checkbox">
+                            <input type="checkbox" name="food" value="Asiatiskt" id="asian">
+                            <label>Asiatiskt</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui checkbox">
+                            <input type="checkbox" name="food" value="Mexikanskt" id="mexican">
+                            <label>Mexikanskt</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui checkbox">
+                            <input type="checkbox" name="food" value="Indiskt" id="indish">
+                            <label>Indiskt</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui checkbox">
+                            <input type="checkbox" name="food" value="Arabiskt" id="arabic">
+                            <label>Arabiskt</label>
+                        </div>
+                    </div>
+                </div>
+                <!-- Semantic UI knapp för att skicka formuläret -->
+                <button class="ui primary button" type="submit">Skicka</button>
+            </form>
         </div>
     </main>
     <!-- Footer, ui inverted vertical footer segment för mörk bakgrund och vertikal layout -->
