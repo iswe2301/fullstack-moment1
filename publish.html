@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="sv" class="has-navbar-fixed-top">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS-ramverk | Pulbicering</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Inkluderar Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <!-- Inkluderar Bulma CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+</head>
+
+<body>
+    <header>
+        <!-- Bulma navbar -->
+        <nav class="navbar is-fixed-top is-dark">
+            <div class="navbar-brand">
+                <a class="navbar-item is-hoverable" href="index.html">Hem</a>
+                <a class="navbar-item is-hoverable" href="bulma.html">Bulma</a>
+                <a class="navbar-item is-hoverable" href="semantic.html">Semantic UI</a>
+                <a class="navbar-item is-hoverable is-active" href="publish.html">Publicering</a>
+            </div>
+        </nav>
+        <!-- Bulma hero för bakgrundsbild och titel -->
+        <section class="hero is-fullheight-with-navbar">
+            <div class="hero-body has-text-centered">
+                <div class="container">
+                    <div class="box has-background-black">
+                        <h1 class="title is-1 has-text-white">CSS-ramverk</h1>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </header>
+
+    <!-- Section-klass för att skapa en sektion med innehåll -->
+    <main class="section">
+
+        <div class="container">
+            <!-- MB-5 klass för att ge en margin-bottom på 5 och separera olika sektioner -->
+            <div class="mb-5">
+                <h2 class="title is-2">Publicering av webbplatsen</h2>
+                <p class="mb-4">I detta projekt har jag valt att publicera webbplatsen via Netlify. Genom att använda
+                    Netlify kan jag automatisera publiceringsprocessen direkt från mitt Git-repo, där jag
+                    versionshanterar mitt projekt. Detta gör att jag enkelt kan uppdatera webbplatsen genom att pusha
+                    ändringar till mitt Git-repo.</p>
+                <h3 class="subtitle is-3">Publiceringsprocess</h3>
+                <p class="mb-4">Jag har hanterat mitt projekt lokalt med Git och synkroniserat det med GitHub remote.
+                    Under utvecklingen av projektet har jag arbetat i en separat gren (develop) där jag gör
+                    mina ändringar och tester innan de är redo för att publiceras. För paketering, byggning och
+                    kompilering av projektet har jag använt NPM och Parcel.</p>
+                <p class="mb-4">På Netlify har jag skapat en ny sida och kopplat den till mitt Git-repos main-branch.
+                    När projektet
+                    sedan var färdigt och redo
+                    att publiceras, har jag mergat mina ändringar till huvudgrenen (main) i mitt Git-repo, som i sin tur
+                    startar en byggprocess i Netlify som automatiskt bygger och publicerar webbplatsen.</p>
+                <h3 class="subtitle is-3">Fördelar och nackdelar</h3>
+                <h4 class="subtitle is-4">Fördelar</h4>
+                <p class="mb-4">Netlify erbjuder flera fördelar för publicering av webbplatser, inklusive en
+                    automatiserad publiceringsprocess och enkel hantering av Git-repon. Plattformen stöder flera olika
+                    programmeringsspråk, såsom HTML, CSS och JavaScript, och även utvecklingsramverk som React, Vue och
+                    Angular. Detta gör det möjligt att använda Netlify för flera olika typer av
+                    projekt, både statiska sidor och mer dynamiska applikationer. Plattformen erbjuder en gratis plan
+                    som passar bra att använda för mindre webbplatser eller personliga projekt. Det finns även betalda
+                    planer som erbjuder mer funktionalitet och resurser för större projekt.</p>
+                <h4 class="subtitle is-4">Nackdelar</h4>
+                <p class="mb-4">Det finns dock vissa begränsningar och nackdelar med Netlify. Plattformen har begränsad
+                    bandbredd och lagring i sin gratisversion, vilket kan påverka större projekt negativt. Netlify har
+                    även
+                    begränsat stöd för databaser och serverkonfigurationer, vilket gör att plattformen inte lämpar sig
+                    optimalt för applikationer som kräver en fullständig servermiljö eller mer komplex
+                    backend-funktionalitet.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Bulma footer med mörk bakgrund och vit text -->
+    <footer class="footer has-background-dark has-text-white">
+        <!-- Sektion och container för att centrera innehållet -->
+        <div class="section container">
+            <!-- Kolumner för att dela upp innehållet -->
+            <div class="columns">
+                <!-- Halvbredd på kolumn -->
+                <div class="column is-half">
+                    <h4 class="title is-4 has-text-white">Kontaktuppgifter</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Vänersborgsvägen 9, 85733 Sundsvall</p>
+                    <p><i class="fas fa-phone"></i> <a href="tel:+46733979381" class="has-text-white">+46733979381</a>
+                    </p>
+                    <p><i class="fas fa-envelope"></i> E-post: <a href="mailto:isawestling@gmail.com"
+                            class="has-text-white">isawestling@gmail.com</a></p>
+                </div>
+                <div class="column is-half">
+                    <h4 class="title is-4 has-text-white">Sök</h4>
+                    <div class="control has-icons-left">
+                        <input class="input" type="text" placeholder="Sök...">
+                        <span class="icon is-left">
+                            <i class="fas fa-search"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <!-- Horisontell linje med ljus bakgrund -->
+            <hr class="has-background-light">
+            <!-- Centrerad text i footer -->
+            <p class="has-text-centered">© 2024 Isa Westling</p>
+        </div>
+    </footer>
+</body>
+
+</html>
