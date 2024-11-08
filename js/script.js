@@ -9,37 +9,43 @@ document.addEventListener('DOMContentLoaded', function () {
     // Använder tablesort-plugin för att sortera tabellen
     $('#data-table').tablesort();
 
-    // Hämtar formuläret och lägger till en eventlyssnare för inskickning
-    document.getElementById('data-form').addEventListener('submit', function (event) {
-        event.preventDefault(); // Förhindrar standardbeteendet för formuläret
+    // Hämtar submit-knappen till formuläret
+    let submitForm = document.getElementById('data-form');
 
-        // Hämtar värdena från formuläret
-        const name = document.getElementById('name').value;
-        const interests = document.getElementById('interests').value;
-        const season = document.getElementById('season').value;
-        const foodCheckboxes = document.querySelectorAll('input[name="food"]:checked'); // Hämtar alla kryssrutor som är ikryssade
-        const foods = Array.from(foodCheckboxes).map(cb => cb.value).join(', '); // Skapar en sträng av de ikryssade kryssrutorna med kommatecken emellan
+    // Kontrollerar om submit-knappen finns
+    if (submitForm) {
+        // Lägger till en eventlyssnare för formuläret
+        submitForm.addEventListener('submit', function (event) {
+            event.preventDefault(); // Förhindrar standardbeteendet för formuläret
 
-        // Skapar ett objekt för input-värdena
-        const inputData = {
-            name: name,
-            interests: interests,
-            season: season,
-            foods: foods
-        };
+            // Hämtar värdena från formuläret
+            const name = document.getElementById('name').value;
+            const interests = document.getElementById('interests').value;
+            const season = document.getElementById('season').value;
+            const foodCheckboxes = document.querySelectorAll('input[name="food"]:checked'); // Hämtar alla kryssrutor som är ikryssade
+            const foods = Array.from(foodCheckboxes).map(cb => cb.value).join(', '); // Skapar en sträng av de ikryssade kryssrutorna med kommatecken emellan
 
-        // Anropar funktion för att spara ny data i localStorage
-        saveData(inputData);
+            // Skapar ett objekt för input-värdena
+            const inputData = {
+                name: name,
+                interests: interests,
+                season: season,
+                foods: foods
+            };
 
-        // Skapar en ny rad i tabellen och lägger till den
-        const tableBody = document.querySelector('#data-table tbody');
-        const newRow = document.createElement('tr');
-        newRow.innerHTML = `<td>${name}</td><td>${interests}</td><td>${season}</td><td>${foods}</td>`;
-        tableBody.appendChild(newRow);
+            // Anropar funktion för att spara ny data i localStorage
+            saveData(inputData);
 
-        // Rensar formuläret
-        document.getElementById('data-form').reset();
-    });
+            // Skapar en ny rad i tabellen och lägger till den
+            const tableBody = document.querySelector('#data-table tbody');
+            const newRow = document.createElement('tr');
+            newRow.innerHTML = `<td>${name}</td><td>${interests}</td><td>${season}</td><td>${foods}</td>`;
+            tableBody.appendChild(newRow);
+
+            // Rensar formuläret
+            document.getElementById('data-form').reset();
+        });
+    }
 });
 
 // Funktion för att spara data i localStorage
@@ -79,11 +85,14 @@ function loadData() {
         // Hämtar tabellens tbody-element
         const tableBody = document.querySelector('#data-table tbody');
 
-        // Loopar igenom objekten och skapar en rad med värdena från objekten
-        data.forEach(item => {
-            const newRow = document.createElement('tr');
-            newRow.innerHTML = `<td>${item.name}</td><td>${item.interests}</td><td>${item.season}</td><td>${item.foods}</td>`;
-            tableBody.appendChild(newRow); // Lägger till raden i tabellen
-        });
+        // Kontrollerar om tbody-elementet finns
+        if (tableBody) {
+            // Loopar igenom objekten och skapar en rad med värdena från objekten
+            data.forEach(item => {
+                const newRow = document.createElement('tr');
+                newRow.innerHTML = `<td>${item.name}</td><td>${item.interests}</td><td>${item.season}</td><td>${item.foods}</td>`;
+                tableBody.appendChild(newRow); // Lägger till raden i tabellen
+            });
+        }
     }
 }
