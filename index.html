@@ -6,24 +6,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CSS-ramverk | Hem</title>
     <link rel="stylesheet" href="css/style.css">
+    <!-- Inkluderar Semantic UI CSS och JS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.5.0/dist/semantic.min.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <header>
-        <h1>CSS-ramverk</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Hem</a></li>
-                <li><a href="semantic.html">Semantic UI</a></li>
-                <li><a href="bulma.html">Bulma</a></li>
-            </ul>
+        <!-- Använder Semantic UI top fixed meny -->
+        <nav class="ui four item inverted top fixed menu">
+            <a class="active item" href="index.html">Hem</a>
+            <a class="item" href="semantic.html">Semantic UI</a>
+            <a class="item" href="bulma.html">Bulma</a>
+            <a class="item" href="publish.html">Publicering</a>
         </nav>
+        <!-- Bakgrundsbild i header -->
+        <img src="img/background.png" alt="Vissna löv på ett träd" class="ui fluid image">
     </header>
-    <main>
-        <h2>Uppgiftsbeskrivning</h2>
+    <!-- Innehåll, ui-container för att göra innehållet responsivt -->
+    <main class="ui container">
+        <div class="ui container">
+            <h1 class="ui header">CSS-ramverk</h1>
+            <!-- Använder Semantic UI header för rubriker -->
+            <h2 class="ui header">Uppgiftsbeskrivning</h2>
+            <p>Denna webbplats har skapats som en del av kursen Fullstack-utveckling med ramverk
+                (Webbutvecklingsprogrammet, MIUN). I denna uppgift har
+                jag utvärderat två olika CSS-ramverk: <strong>Semantic UI</strong> och <strong>Bulma</strong>. Målet med
+                uppgiften har varit att skapa en
+                sammanhängande webbplats som använder dessa ramverk för att styla olika undersidor.
+            </p>
+            <p>Webbplatsen består av två undersidor som stylats med respektive CSS-ramverk (Semantic IU och Bulma). På
+                varje sida finns en tabell med data samt ett formulär för att spara ny data i tabellen. Jag har använt
+                localStorage för att spara den nya datan från formulären. Sidorna innehåller även information om
+                respektive ramverk samt de fördelar samt nackdelar jag noterat. Respektive sida använder ramverkens
+                komponenter för design. Utöver detta finns en undersida med information om webbplatsens
+                publiceringsplattform och hur publicering har skett.</p>
+        </div>
     </main>
-    <footer>
-        <p>© 2024 Isa Westling</p>
+    <!-- Footer, ui inverted vertical footer segment för mörk bakgrund och vertikal layout -->
+    <footer class="ui inverted vertical footer segment">
+        <div class="ui container">
+            <!-- Använder Semantic UI stackable grid för att göra innehållet responsivt -->
+            <div class="ui stackable inverted grid centered">
+                <!-- Använder Semantic UI column för att dela upp innehållet -->
+                <div class="eight wide column">
+                    <h4 class="ui inverted header">Kontaktuppgifter</h4>
+                    <!-- Semantic UI ikoner för att visa kontaktuppgifter -->
+                    <p><i class="map marker alternate icon"></i> Vänersborgsvägen 9, 85733 Sundsvall</p>
+                    <span><i class="phone icon"></i> Telefon: <a href="tel:+46733979381">+46733979381</a></span><br><br>
+                    <span><i class="envelope icon"></i> E-post: <a
+                            href="mailto:isawestling@gmail.com">isawestling@gmail.com</a></span>
+                </div>
+                <div class="eight wide column">
+                    <h4 class="ui inverted header">Sök</h4>
+                    <div class="ui large icon input">
+                        <input type="text" placeholder="Sök...">
+                        <i class="search icon"></i>
+                    </div>
+                </div>
+            </div>
+            <!-- Divider för att skapa avstånd -->
+            <div class="ui divider"></div>
+            <p>© 2024 Isa Westling</p>
+        </div>
     </footer>
 </body>
 
