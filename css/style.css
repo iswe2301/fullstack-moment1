@@ -1,0 +1,44 @@
+/* Padding för att skapa luft */
+main {
+    padding: 5% 0 10% 0;
+}
+
+nav {
+    padding: 1rem 0 !important;
+}
+
+/* Centrerar text och justerar padding */
+footer {
+    text-align: center;
+    padding: 5% 0 !important;
+}
+
+.ui.button {
+    margin: 1rem 0 !important;
+}
+
+label {
+    margin: 0.5rem 0 !important;
+}
+
+textarea,
+input,
+select {
+    margin: 0.5rem 0 !important;
+}
+
+.ui.form .grouped.fields {
+    margin: 2rem 0 1rem 0 !important;
+}
+
+/* Bakgrundsbild för hero */
+.hero {
+    background-image: url('/img/background.png');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Ändrar muspekarikon till hand */
+th {
+    cursor: pointer;
+}
